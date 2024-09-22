@@ -1,15 +1,18 @@
-import React, { FC } from 'react'
+
+import React, { FC, PropsWithChildren } from 'react'
 
 import Navigation from '../Navigation/Navigation'
 import Sidebar from '../Sidebar/Sidebar'
 
 import styles from './Layout.module.scss'
 
-const Layout: FC = () => {
+const Layout: FC<PropsWithChildren> = ({children}) => {
 	return (
 		<div className={styles.layout}>
 			<Navigation />
-			<div className={styles.center}></div>
+			<div className={styles.center}>
+				{children}
+			</div>
 			<Sidebar />
 		</div>
 	)

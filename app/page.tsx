@@ -1,16 +1,10 @@
-"use client"
+'use client'
 
+import { NextPage } from 'next'
 import MainProvider from 'providers/MainProvider'
+import { PropsWithChildren } from 'react'
 
-import { FC } from 'react'
-
-import Layout from './components/screens/home/Layout/Layout'
-
-const Home: FC = () => {
-	return (
-		<MainProvider>
-			<Layout />
-		</MainProvider>
-	)
+const Home: NextPage<PropsWithChildren> = ({ children }) => {
+	return <MainProvider>{children}</MainProvider>
 }
 export default Home
