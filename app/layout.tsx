@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
+import MainProvider from 'providers/MainProvider'
 
-import './globals.scss'
-import Home from 'page'
+import './assets/styles/globals.scss'
 
 export const metadata: Metadata = {
 	title: 'Cinema-project',
@@ -16,9 +16,7 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body>
-				<Home>
-					{children}
-				</Home>
+				<MainProvider>{children}</MainProvider>
 			</body>
 		</html>
 	)

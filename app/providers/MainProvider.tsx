@@ -1,7 +1,14 @@
+'use client'
+
 import React, { FC, PropsWithChildren } from 'react'
 import { QueryClient, QueryClientProvider } from 'react-query'
+import { Provider } from 'react-redux'
 
-import Layout from '@/components/screens/home/Layout/Layout'
+
+import { store } from '@/store/store'
+
+import ReduxToast from './ReduxToast'
+import Layout from '@/components/home/Layout/Layout'
 
 const queryClient = new QueryClient({
 	defaultOptions: {
@@ -13,9 +20,12 @@ const queryClient = new QueryClient({
 
 const MainProvider: FC<PropsWithChildren> = ({ children }) => {
 	return (
-		<QueryClientProvider client={queryClient}>
-			<Layout>{children}</Layout>
-		</QueryClientProvider>
+		<Provider store={store}>
+			<QueryClientProvider client={queryClient}>
+				<ReduxToast></ReduxToast>
+				<Layout>{children}</Layout>
+			</QueryClientProvider>
+		</Provider>
 	)
 }
 export default MainProvider

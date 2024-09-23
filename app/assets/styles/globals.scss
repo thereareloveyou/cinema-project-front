@@ -4,6 +4,8 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
+@import 'react-redux-toastr/src/styles/index';
+
 html,
 body {
 	padding: 0;
@@ -24,4 +26,31 @@ input[type='file']::-webkit-file-upload-button {
 
 input:focus {
 	box-shadow: none !important;
+}
+
+
+$bar-width: 20%;
+
+.layout {
+	@apply relative;
+
+	> div:first-child,
+	> div:last-child {
+		@apply fixed top-0 bottom-0;
+		width: $bar-width;
+		max-width: 350px;
+	}
+
+	> div:first-child {
+		@apply left-0 border-r border-r-gray-800;
+	}
+
+	> div:last-child {
+		@apply right-0 border-l border-l-gray-800;
+	}
+
+	.center {
+		@apply min-h-screen p-layout;
+		margin: 0 $bar-width;
+	}
 }

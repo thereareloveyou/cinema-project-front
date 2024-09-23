@@ -1,10 +1,10 @@
 'use client'
 
 import { NextPage } from 'next'
-import MainProvider from 'providers/MainProvider'
-import { PropsWithChildren } from 'react'
+import { toastr } from 'react-redux-toastr'
 
-const Home: NextPage<PropsWithChildren> = ({ children }) => {
-	return <MainProvider>{children}</MainProvider>
+const HomePage: NextPage = () => {
+	return <div><button onClick={()=> toastr.success('Auth', 'Succ')}>Button</button></div>
 }
-export default Home
+
+export default HomePage

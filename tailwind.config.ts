@@ -24,7 +24,7 @@ const config: Config = {
         700: "#39393f",
         800: "#242529",
         900: "#191b1f",
-        950: "#181215",
+        950: "#0e0c0d",
       },
     },
     extend: {
@@ -97,9 +97,9 @@ const config: Config = {
             textDecorationColor: "rgba(255,255,255,0.9)",
           },
         },
-        "air-block": {
+        ".air-block": {
           borderRadius: theme("borderRadius.layout"),
-          backgroundColor: theme("color.gray.950"),
+          backgroundColor: '#0e0c0d',
           color: theme("colors.white"),
           boxShadow: theme("boxShadow.lg"),
         },
