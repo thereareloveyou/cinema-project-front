@@ -3,6 +3,7 @@
 import React, { FC, useState } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
 
+import { useActions } from '@/hooks/useActions'
 import { useAuth } from '@/hooks/useAuth'
 import { useAuthRedirect } from '@/hooks/useAuthRedirect'
 
@@ -16,6 +17,7 @@ const Auth: FC = () => {
 	useAuthRedirect()
 
 	const { isLoading } = useAuth()
+	const { login, register } = useActions()
 
 	const [type, setType] = useState<'login' | 'register'>('login')
 
@@ -27,13 +29,6 @@ const Auth: FC = () => {
 	} = useForm<IAuthInput>({
 		mode: 'onChange',
 	})
-
-	const login = (data: any) => {
-		alert(`Login ${data}`)
-	}
-	const register = (data: any) => {
-		alert(`Reg ${data}`)
-	}
 
 	const onSubmit: SubmitHandler<IAuthInput> = (data) => {
 		if (type == 'login') login(data)

@@ -1,4 +1,4 @@
-import { axiosClassic } from 'interseptors'
+import { axiosClassic } from 'api/interseptors'
 
 import { IMovie } from '@/shared/Types/movie.types'
 
